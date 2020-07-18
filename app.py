@@ -90,22 +90,38 @@ class Window(QMainWindow):
         # buffer.close()
         result = pytesseract.image_to_string(screenShot, timeout=10)
         pyperclip.copy(result)
-        print(f'Result coppied to clipboard')
         os.remove('selected.png')
-        self.displayExit()
+        if(result == ''):
+            self.displayError()
+        else:
+            print(f'Result coppied to clipboard')
+            self.displayExit()
 
     def displayExit(self):
         msg = QMessageBox()
         msg.setWindowTitle('Coppied')
         msg.setText('The obtained result has been coppied to the clpiboard')
         msg.setIcon(QMessageBox.NoIcon)
-        msg.setStandardButtons(QMessageBox.Ok)
-        msg.setDefaultButton(QMessageBox.Ok)
+        msg.setStandardButtons(QMessageBox.Retry | QMessageBox.Close)
+        msg.setDefaultButton(QMessageBox.Close)
+        msg.buttonClicked.connect(self.exit)
+        msg.exec()
+
+    def displayError(self):
+        msg = QMessageBox()
+        msg.setWindowTitle('Error')
+        msg.setText('No text was found.')
+        msg.setIcon(QMessageBox.Warning)
+        msg.setStandardButtons(QMessageBox.Retry | QMessageBox.Close)
+        msg.setDefaultButton(QMessageBox.Retry)
         msg.buttonClicked.connect(self.exit)
         msg.exec()
 
     def exit(self, i):
-        QApplication.quit()
+        if(i.text() == 'Retry'):
+            pass
+        else:
+            QApplication.quit()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
