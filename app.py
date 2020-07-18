@@ -14,6 +14,7 @@ class Window(QMainWindow):
         flags = QtCore.Qt.WindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.Dialog)
         self.setWindowFlags(flags)
         self.showMaximized()
+        self.setStyleSheet("background-color: rgba(255,255,255,0.2); border: 3px solid rgb(16, 229, 125);")
         self.show()
 
 
