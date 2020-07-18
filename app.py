@@ -26,6 +26,11 @@ class Window(QMainWindow):
         self.showMaximized()
         self.setStyleSheet("background-color: rgba(255,255,255,0.0); border: 3px solid rgb(16, 229, 125);")
         self.show()
+        try:
+            pytesseract.get_tesseract_version()
+        except:
+            self.showTesseractError()
+        
 
     def mousePressEvent(self, session):
         mouse = Controller()
@@ -114,6 +119,16 @@ class Window(QMainWindow):
         msg.setIcon(QMessageBox.Warning)
         msg.setStandardButtons(QMessageBox.Retry | QMessageBox.Close)
         msg.setDefaultButton(QMessageBox.Retry)
+        msg.buttonClicked.connect(self.exit)
+        msg.exec()
+
+    def showTesseractError(self):
+        msg = QMessageBox()
+        msg.setWindowTitle('Error')
+        msg.setText('Pytesseract is either not installed or cannot be found')
+        msg.setIcon(QMessageBox.Critical)
+        msg.setStandardButtons(QMessageBox.Close)
+        msg.setDefaultButton(QMessageBox.Close)
         msg.buttonClicked.connect(self.exit)
         msg.exec()
 
