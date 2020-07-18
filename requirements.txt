@@ -1,0 +1,10 @@
+Pillow==7.2.0
+pynput==1.6.8
+pyobjc-core==6.2.2
+pyobjc-framework-Cocoa==6.2.2
+pyobjc-framework-Quartz==6.2.2
+pyperclip==1.8.0
+PyQt5==5.15.0
+PyQt5-sip==12.8.0
+pytesseract==0.3.4
+six==1.15.0
