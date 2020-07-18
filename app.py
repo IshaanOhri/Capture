@@ -1,12 +1,16 @@
 import sys
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtWidgets import QMainWindow, QApplication, QDialog, QLabel, QPushButton, QMessageBox
 from PyQt5.QtGui import QPainter, QBrush, QPen, QColor
 
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
+
+
+        # screen = self.primaryScreen()
+        
         
         self.start, self.end = QtCore.QPoint(), QtCore.QPoint()
         self.fullWindow()
@@ -25,8 +29,11 @@ class Window(QMainWindow):
         return super().mousePressEvent(session)
 
     def mouseReleaseEvent(self, session):
+        if self.start == self.end:
+            return super().mouseReleaseEvent(session)
         self.end = session.pos()
         self.update()
+        self.openPopup()
         return super().mouseReleaseEvent(session)
 
     def mouseMoveEvent(self, session):
@@ -40,6 +47,32 @@ class Window(QMainWindow):
         painter.setBrush(QBrush(QColor.fromRgbF(255,255,255,0.2), Qt.SolidPattern))
         painter.drawRect(QtCore.QRect(self.start, self.end))
 
+    def openPopup(self):
+        msg = QMessageBox()
+        msg.setWindowTitle('Are you sure?')
+        msg.setText('Do you want to confirm selection?')
+        msg.setIcon(QMessageBox.Question)
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.Retry)
+        msg.setDefaultButton(QMessageBox.Yes)
+        msg.buttonClicked.connect(self.retry)
+        # popup = QDialog()
+        # screenWidth = self.size().width()
+        # screenHeight = self.size().height()
+        # centerX = screenWidth / 2
+        # centerY = screenHeight / 2
+        # height = 100
+        # width = 400
+        # msg.setGeometry(int(centerX - width / 2),int(centerY - height/2),int(width),int(height))
+        # popup.setModal(True)
+        # popup.exec()
+        msg.exec()
+
+    def retry(self, i):
+        if(i.text() == 'Retry'):
+            self.start, self.end = QtCore.QPoint(), QtCore.QPoint()
+        else:
+            print(i.text())
+        self.update()
 
 
 if __name__ == "__main__":
