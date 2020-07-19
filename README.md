@@ -28,7 +28,20 @@ pip install -r requirements.txt
 python app.py
 ```
 If your system default is python 2.x then try running `pip3` and `python3` instead of `pip` and `python`
-
+<br><br>
+If you encounter error installing pytesseract, try this:
+##### MacOs
+```
+brew install tesseract
+```
+##### Linux
+```
+sudo apt-get install tesseract-ocr
+```
+##### Windows
+Download binary from [here](https://github.com/UB-Mannheim/tesseract/wiki) and add `pytesseract.pytesseract.tesseract_cmd = 'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe'` to your script
+<br><br>
+If you continue running into issue refer the INSTALLATION section [here](https://pypi.org/project/pytesseract/)
 
 
 ## Contributing
