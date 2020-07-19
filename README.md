@@ -9,6 +9,8 @@
 
 <p  align="center"><img width="1000" src = "https://github.com/IshaanOhri/Capture/blob/master/Capture.gif"></p>
 
+<br>
+
 ## Installation
 1. Prerequisite: [Python 3](https://www.python.org/downloads/)
 2. Clone the repo
@@ -43,6 +45,7 @@ Download binary from [here](https://github.com/UB-Mannheim/tesseract/wiki) and a
 <br><br>
 If you continue running into issue refer the INSTALLATION section [here](https://pypi.org/project/pytesseract/)
 
+<br>
 
 ## Contributing
 
