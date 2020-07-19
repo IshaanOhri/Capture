@@ -7,6 +7,8 @@
 <br>
 <br>
 
+<p  align="center"><img width="1000" src = "https://github.com/IshaanOhri/Capture/blob/master/Capture.gif"></p>
+
 ## Installation
 1. Prerequisite: [Python 3](https://www.python.org/downloads/)
 2. Clone the repo
