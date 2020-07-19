@@ -88,11 +88,6 @@ class Window(QMainWindow):
             self.convertToText(selectedArea)
         
     def convertToText(self, screenShot):
-        # buffer = QBuffer()
-        # buffer.open(QBuffer.ReadWrite)
-        # screenShot.save(buffer, "PNG")
-        # img = Image.open(io.BytesIO(buffer.data()))
-        # buffer.close()
         result = pytesseract.image_to_string(screenShot, timeout=10)
         pyperclip.copy(result)
         os.remove('selected.png')
