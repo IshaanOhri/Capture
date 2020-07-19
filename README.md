@@ -74,7 +74,7 @@ The project is distributed under the MIT License. See [LICENSE](https://github.c
 <br>
 
 ## Inspirational Credits
-Thanks to [Ian](https://github.com/ianzhao05) for the inspiration and for the help in code
+Thanks to [Ian](https://github.com/ianzhao05) for the inspiration.
 
 <br>
 <br>
