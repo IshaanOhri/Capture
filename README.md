@@ -1,11 +1,9 @@
 <code>
   <h1 align="center">Capture</h1>
 </code>
-
 <p align="center">
   Capture is a python based desktop application that lets you capture the text which otherwise cannot be copied. It saves the time spent on software/website to get the text. Just select and voila, your text is copied to the clipboard. It uses python's PyQt5 module for building the entire GUI and pytesseract for extracting text from the image.
 </p>
-
 <br>
 <br>
 
