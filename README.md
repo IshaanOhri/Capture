@@ -44,6 +44,8 @@ sudo apt-get install tesseract-ocr
 Download binary from [here](https://github.com/UB-Mannheim/tesseract/wiki) and add `pytesseract.pytesseract.tesseract_cmd = 'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe'` to your script
 <br><br>
 If you continue running into issue refer the INSTALLATION section [here](https://pypi.org/project/pytesseract/)
+<br>
+The project has been tested only on MacOS, should you encounter any isuue on any other operating system, please feel free to contribute.
 
 <br>
 
