@@ -66,15 +66,15 @@ The project is distributed under the MIT License. See [LICENSE](https://github.c
 
 <br>
 
-## Inspirational Credits
-1. [Ian](https://github.com/ianzhao05)
-
-<br>
-
 ## Tech stacks used
 <p>
   <img src="https://github.com/IshaanOhri/IshaanOhri/blob/master/assets/python.png" height=40 hspace=20>
 </p>
+
+<br>
+
+## Inspirational Credits
+Thanks to [Ian](https://github.com/ianzhao05) for the inspiration and for the help in code
 
 <br>
 <br>
