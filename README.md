@@ -19,7 +19,7 @@ git clone https://github.com/IshaanOhri/Capture.git
 ```
 3. `cd` into directory
 ```
-cd capture
+cd Capture
 ```
 4. Install all packages
 ```
@@ -29,7 +29,7 @@ pip install -r requirements.txt
 ```
 python app.py
 ```
-If your system default is python 2.x then try running `pip3` and `python3` instead of `pip` and `python`
+<i>If your system default is python 2.x then try running <code>pip3</code> and <code>python3</code> instead of <code>pip</code> and <code>python</code></i>
 <br><br>
 If you encounter error installing pytesseract, try this:
 ##### MacOs
